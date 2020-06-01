@@ -1,0 +1,39 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+	<h:form>
+	
+		<p:fieldset legend="Cadastramento de Funcionarios">
+
+			<h:panelGrid columns="4">
+
+				<h:panelGrid columns="4" cellpadding="2" cellspacing="2">
+					
+					<p:outputLabel value="Nome: " />
+					<p:inputText value="#{PessoaBean.pessoa.nome}" />
+					<p:outputLabel value="ID do Departamento: " />
+					<p:inputText value="#{PessoaBean.pessoa.depto.id}" />
+					<p:outputLabel value="CPF: " />
+					<p:inputText value="#{PessoaBean.pessoa.cpf}" />
+					<p:outputLabel value="Nome da Mãe: " />
+					<p:inputText value="#{PessoaBean.pessoa.mae}" />
+					<p:outputLabel value="Número do PIS " />
+					<p:inputText value="#{PessoaBean.pessoa.pis}" />
+					<p:outputLabel value="Data de Admissão: " />
+					<p:inputText value="#{PessoaBean.pessoa.admissao}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+					</p:inputText>
+				</h:panelGrid>
+					<p:commandButton value="Salvar" update="@form"
+						actionListener="#{PessoaBean.inserir}" />
+				</h:panelGrid>
+			</p:fieldset>
+
+		</h:form>
+	</h:body>
+</ui:component>
+
